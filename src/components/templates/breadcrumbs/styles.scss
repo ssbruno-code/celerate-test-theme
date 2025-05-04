@@ -1,0 +1,25 @@
+// SCSS code for hep/breadcrumbs component
+@import '../../assets/scss/_variables';
+
+.celeratewpcssbreadcrumbs {
+    font-size: 14px;
+
+    a {
+        display: inline-flex;
+        font-weight: normal;
+        text-decoration: underline;
+        color: $text-primary-color;
+        font-size: 14px;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    span {
+        color: $text-primary-color;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+}

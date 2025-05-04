@@ -1,0 +1,86 @@
+// SCSS code for hep/404-page component
+@import '../../assets/scss/_variables';
+
+.error404 {
+	background-color: $bg-secondary-color;
+
+	main {
+
+		.error404-page-content {
+			width: 100%;
+			max-width: 850px;
+			margin: 0 auto;
+			padding: 200px 0 250px;
+
+			.error404-heading {
+				margin-top: 0;
+				font-size: 56px;
+
+			}
+
+			.error404-body-copy {
+				font-size: 20px;
+
+			}
+
+			.search-form {
+				margin: 40px 0;
+
+				.search-input {
+					flex-grow: 1;
+					flex-shrink: 1;
+					padding: 8px 14px;
+					border: none;
+					border-bottom: 1px solid $bg-base-dark-color;
+					background-color: transparent;
+					font-size: inherit;
+					width: 100%;
+				}
+
+				button {
+					padding: 15px 22px;
+					background-color: $bg-base-dark-color;
+					flex-grow: 0;
+					flex-shrink: 0;
+					border: none;
+
+					svg {
+						display: block;
+					}
+
+					&:hover {
+						background-color: $bg-primary-color;
+					}
+				}
+			}
+
+			.error404-navigation {
+
+				.error404-navigation-menu {
+		
+					list-style-type: none;
+					margin: 0;
+					padding: 0;
+
+					.menu-item {
+						color: $primary-color;
+						font-size: 20px;
+						font-weight: 700;
+						line-height: normal;
+						border-right: 3px solid #000;
+						padding: 0 8px;
+
+						a {
+							text-decoration: underline;
+						}
+
+						
+					}
+
+				}
+
+			}
+
+		}
+	}
+}

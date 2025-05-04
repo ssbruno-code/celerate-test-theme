@@ -1,0 +1,126 @@
+$font-family: "Inter", sans-serif;
+$color: #192434;
+$bg-color: #fff; 
+$max-width: 1290px;
+$background: #fff !default;
+
+
+//Desktop
+$h1_font_size: 40px !default;
+$h2_font_size: 28px !default;
+$h3_font_size: 24px !default;
+$h4_font_size: 20px!default;
+$h5_font_size: 18px !default;
+$h6_font_size: 16px !default;
+
+$h1_margin: 0.67em 0 !default;
+$h2_margin: 0.83em 0 !default;
+$h3_margin: 1em 0 !default;
+$h4_margin: 1.33em 0 !default;
+$h5_margin: 1.67em 0 !default;
+$h6_margin: 2.33em 0 !default;
+
+$h1_line_height: 44px !default;
+$h2_line_height: 32px !default;
+$h3_line_height: 28px!default;
+$h4_line_height: 24px !default;
+$h5_line_height: 22px !default;
+$h6_line_height: 20px !default;
+
+
+$font-size: 22px !default;
+$font-weight: normal !default;
+$line-height: 32px !default;
+
+//Mobile
+$h1_font_size_m: 32px !default;
+$h2_font_size_m: 24px !default;
+$h3_font_size_m: 22px !default;
+$h4_font_size_m: 20px !default;
+$h5_font_size_m: 18px !default;
+$h6_font_size_m: 16px !default;
+
+$h1_line_height_m: 36px !default;
+$h2_line_height_m: 32px !default;
+$h3_line_height_m: 26px !default;
+$h4_line_height_m: 24px !default;
+$h5_line_height_m: 22px !default;
+$h6_line_height_m: 20px !default;
+
+$h1_margin_m: 0.67em 0 !default;
+$h2_margin_m: 0.83em 0 !default;
+$h3_margin_m: 1em 0 !default;
+$h4_margin_m: 1.33em 0 !default;
+$h5_margin_m: 1.67em 0 !default;
+$h6_margin_m: 2.33em 0 !default;
+
+$font-size_m: 18px;
+$font-weight_m: normal;
+$line-height_m: 1.5;
+
+//Tablet
+$h1_font_size_t: 36px !default;
+$h2_font_size_t: 26px !default;
+$h3_font_size_t: 23px !default;
+$h4_font_size_t: 20px !default;
+$h5_font_size_t: 18px !default;
+$h6_font_size_t: 16px!default;
+
+$h1_line_height_t: 40px !default;
+$h2_line_height_t: 30px !default;
+$h3_line_height_t: 28px!default;
+$h4_line_height_t: 24px !default;
+$h5_line_height_t: 22px !default;
+$h6_line_height_t: 20px !default;
+
+$h1_margin_t: 0.67em 0 !default;
+$h2_margin_t: 0.83em 0 !default;
+$h3_margin_t: 1em 0 !default;
+$h4_margin_t: 1.33em 0 !default;
+$h5_margin_t: 1.67em 0 !default;
+$h6_margin_t: 2.33em 0 !default;
+
+$font-size_t: 20px;
+$font-weight_t: normal;
+$line-height_t: 1.5;
+
+
+/** General Colours */
+$primary-color: #117EC3;
+$primary-color-disabled: #B4DCF2;
+$primary-color-hover: #003979;
+$primary-color-selected: #003979;
+$secondary-color: #EB8500;
+$secondary-color-disabled: #FFD587;
+$secondary-color-hover: #B95600;
+$secondary-color-selected: #B95600;
+$dark-light: #FFFFFF;
+$light-gray: #333333;
+
+/** Background Colours */
+$bg-base-color: $bg-color;
+$bg-base-dark-color: $color;
+$bg-primary-color: $primary-color;
+$bg-secondary-color: $secondary-color ;
+$bg-tertiary-color: #FFCC00;
+$bg-quaternary-color: #FFE280;
+$bg-quinary-color: #DDE6DD;
+$bg-senary-color: #FDF7E0;
+$bg-septenary-color: #F5F5F5;
+$bg-octanary-color: #eef3ee;
+
+/** Text Colours */
+$text-base-dark-color: $color;
+$text-base-light-color: #fff;
+$text-primary-color: $primary-color;
+$text-primary-dark-color: $primary-color-selected;
+$text-secondary-color: $secondary-color;
+$text-secondary-dark-color: $secondary-color-selected;
+$text-tertiary-color: #FFE280;
+$text-quaternary-color: #8F8F8F;
+
+// Bootstrap Colors
+
+:root {
+    --bs-font-sans-serif: 'Inter', sans-serif !important;
+}
