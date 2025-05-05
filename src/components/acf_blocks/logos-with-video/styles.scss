@@ -1,6 +1,41 @@
 // SCSS code for acf_blocks/logos-with-video component
-@import "./shared";
+@import '../../assets/scss/_variables';
 
-.acf-blocks-logos-with-video {
+.acf-blocks-logos-with-video  {
 
+    .content{
+        .title-1{
+            color: $primary-color-hover !important;
+            font-weight: 900 !important;
+        }
+
+        .title-2{
+            color: $primary-color-hover !important;
+            font-weight: 900 !important;
+            font-size: 62px;
+            line-height: 72px;
+        }
+
+        .desc{
+            padding-right: 50px;
+        }
+    }
+
+    
+    .video {
+        .video-wrapper {
+            cursor: pointer;               // whole box acts like a button
+            aspect-ratio: 16 / 9;          // keeps responsive 16:9 area
+            overflow: hidden;              // hides any iframe overflow
+            }
+            
+            .video-thumb {
+            object-fit: cover;             // scales nicely inside aspect ratio
+            }
+            
+            .video-play-btn img {
+            width: 90px;                   // tweak to match design
+            height: 90px;
+            }
+    }
 }

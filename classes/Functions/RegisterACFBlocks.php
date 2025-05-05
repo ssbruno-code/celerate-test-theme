@@ -40,8 +40,22 @@ final class RegisterACFBlocks {
 				'icon' => 'format-image',
 				'keywords' => array( 'blog', 'home', 'posts' ),
 				'enqueue_assets' => function () {
-					wp_enqueue_style( 'hero-banner-top-block-css', get_template_directory_uri() . '/build/css/acf_blocks/logos-with-video/styles.css' );
-					wp_enqueue_script( 'hero-banner-top-block-js', get_stylesheet_directory_uri() . '/build/js/acf_blocks/logos-with-video/scripts.js', array( 'jquery' ), null, true );
+					wp_enqueue_style( 'logos-with-video-block-css', get_template_directory_uri() . '/build/css/acf_blocks/logos-with-video/styles.css' );
+					wp_enqueue_script( 'logos-with-video-block-js', get_stylesheet_directory_uri() . '/build/js/acf_blocks/logos-with-video/scripts.js', array( 'jquery' ), null, true );
+				}
+			) );
+
+			acf_register_block( array(
+				'name' => 'cards-list-with-icons',
+				'title' => __( 'Cards list with icons', 'celeratewp-textdomain' ),
+				'description' => __( 'Logos with video block for the home page', 'celeratewp-textdomain' ),
+				'render_callback' => [ $this, 'my_acf_block_render_callback' ],
+				'category' => 'celeratewp-custom-blocks',
+				'icon' => 'format-image',
+				'keywords' => array( 'blog', 'home', 'posts' ),
+				'enqueue_assets' => function () {
+					wp_enqueue_style( 'cards-list-with-icons-block-css', get_template_directory_uri() . '/build/css/acf_blocks/cards-list-with-icons/styles.css' );
+					wp_enqueue_script( 'cards-list-with-icons-block-js', get_stylesheet_directory_uri() . '/build/js/acf_blocks/cards-list-with-icons/scripts.js', array( 'jquery' ), null, true );
 				}
 			) );
 		}
