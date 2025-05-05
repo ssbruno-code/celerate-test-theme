@@ -4,26 +4,30 @@
  * @description     Add a description for the component
 */
 
-$default_args = array("class" => "");
-$args = array_merge($default_args, $args ?? []);
+$title = get_field('title') ? get_field('title') : 'Quote Management';
+$description = get_field('description') ? get_field('description') : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet aliquam lectus, in scelerisque eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc iaculis at felis sed pretium.';
+$cta_text = get_field('cta_button')['title'] ? get_field('cta_button')['title'] : 'See a Demo';
+$cta_link = get_field('cta_button')['url'] ? get_field('cta_button')['url'] : '#';
+$cta_tab = get_field('cta_button')['target'] ? get_field('cta_button')['target'] : '_self'; 
+$img_url = get_field('image') ? get_field('image') : get_template_directory_uri() . '/src/assets/images/her-img.png';
 ?>
-<section class="acf-blocks-hero-banner-top <?php echo $args['class']; ?>" style="background-image: url('<?php echo get_template_directory_uri(); ?>/src/assets/images/bg-hero.png'); background-size: cover; background-repeat: no-repeat; background-position: center right;">
+<section class="acf-blocks-hero-banner-top" style="background-image: url('<?php echo get_template_directory_uri(); ?>/src/assets/images/bg-hero.png'); background-size: cover; background-repeat: no-repeat; background-position: center right;">
     <div class="container hero-container">
         <div class="row py-5">
             <div class="col-12 col-md-6 d-flex flex-column justify-content-center content order-2 order-md-1">
-                <h1>Quote Management</h1>
+                <h1><?php echo esc_html( $title ); ?></h1>
                 <p class="text-hero py-3">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet aliquam lectus, in scelerisque eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc iaculis at felis sed pretium.
+                <?php echo esc_html( $description ); ?>
                 </p>
                 <div class="button-cta">
-                    <a href="#" class="btn btn-secondary">
-                        See a Demo
+                    <a href="<?php echo esc_url($cta_link); ?>" target="<?php echo esc_attr($cta_tab); ?>" class="btn btn-secondary">
+                        <?php echo esc_html($cta_text); ?>
                     </a>
                 </div>
                 
             </div>
             <div class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center img order-1 order-md-2">
-                <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/her-img.png" alt="hero banner" class="hero-img img-fluid">
+                <img src="<?php echo esc_url($img_url); ?>" alt="hero banner" class="hero-img img-fluid">
 
             </div>
         </div>

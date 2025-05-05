@@ -10,6 +10,18 @@
 // If this file is called directly, abort!!!
 defined( 'ABSPATH' ) or die( 'Hey, what are you doing here?' );
 
+/**
+ * Only tell ACF to use our text-domain if the ACF plugin is actually active.
+ */
+add_action( 'after_setup_theme', function () {
+    if ( class_exists( 'ACF' ) ) {
+        add_filter( 'acf/settings/l10n', '__return_true' );
+        add_filter( 'acf/settings/l10n_textdomain', function () {
+            return 'celeratewp-textdomain';
+        } );
+    }
+} );
+
 // Require once the Composer Autoload
 if ( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) {
 	require_once dirname( __FILE__ ) . '/vendor/autoload.php';
