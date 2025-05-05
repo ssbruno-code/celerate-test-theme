@@ -58,6 +58,20 @@ final class RegisterACFBlocks {
 					wp_enqueue_script( 'cards-list-with-icons-block-js', get_stylesheet_directory_uri() . '/build/js/acf_blocks/cards-list-with-icons/scripts.js', array( 'jquery' ), null, true );
 				}
 			) );
+
+			acf_register_block( array(
+				'name' => 'text-with-image',
+				'title' => __( 'Text with image', 'celeratewp-textdomain' ),
+				'description' => __( 'Simple text and image block', 'celeratewp-textdomain' ),
+				'render_callback' => [ $this, 'my_acf_block_render_callback' ],
+				'category' => 'celeratewp-custom-blocks',
+				'icon' => 'format-image',
+				'keywords' => array( 'blog', 'home', 'posts' ),
+				'enqueue_assets' => function () {
+					wp_enqueue_style( 'text-with-image-block-css', get_template_directory_uri() . '/build/css/acf_blocks/text-with-image/styles.css' );
+					wp_enqueue_script( 'text-with-image-block-js', get_stylesheet_directory_uri() . '/build/js/acf_blocks/text-with-image/scripts.js', array( 'jquery' ), null, true );
+				}
+			) );
 		}
 	}
 	

@@ -42,7 +42,10 @@ final class PublicEnqueue {
 		wp_enqueue_style( 'bootstrapcss', get_template_directory_uri() . '/src/assets/library/bootstrap/css/bootstrap.css' );
 		wp_enqueue_script( 'bootstrapjs', get_template_directory_uri() . '/src/assets/library/bootstrap/js/bootstrap.js' );
 
-		
+		wp_register_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css' );
+	
+
+
 	}
 
 	/**
