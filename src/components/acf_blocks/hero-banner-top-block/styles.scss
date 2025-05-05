@@ -1,5 +1,32 @@
 // SCSS code for acf_blocks/hero-banner-top component
 
-.acf-blocks-hero-banner-top {
+@import '../../assets/scss/_variables';
 
+
+.acf-blocks-hero-banner-top {
+    .hero-container {
+        .row{
+            min-height: 600px;
+        }
+
+        .content{
+            h1{
+                color: $white;
+                font-size: 65px !important;
+                line-height: 72px !important;
+                font-weight: 900;
+            }
+
+            p{
+                color: $white;
+            }
+
+            a{
+                padding:23px 30px  !important;
+            }
+        }
+
+
+    }
+    
 }

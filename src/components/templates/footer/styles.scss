@@ -3,7 +3,51 @@
 
 .celeratewpcss-site-footer {
     background-color: $bg-base-dark-color;
-    color: $text-base-light-color;
-    padding-block: 40px;
+    color: $dark-light;
+    padding-top: 40px;
+    li{
+        padding: 8px;
+        a{
+            font-size:20px;
+            line-height: 24px;
+            color: $dark-light;
+            font-weight: 700;
+        }
 
+        a:hover{
+            color: $grey;
+        }
+    }
+
+    .btn-secondary{
+        width: 150px !important;
+        max-width: 100% !important;
+    }
+
+    .copy{
+        min-height: 50px;
+        align-items: center;
+        .copyright{
+            color:white;
+            font-size:13px !important;
+            line-height: 20px;
+            font-weight: 700 !important;
+            margin-bottom: 0 !important;
+        }
+    }
+
+    
+
+    .terms {
+        align-items: center;
+        min-height: 50px;
+        a{
+            color:white;
+            font-size:13px !important;
+            line-height: 20px;
+            &:hover{
+                color: $grey;
+            }
+        }
+}
 }

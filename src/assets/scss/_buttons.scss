@@ -14,3 +14,19 @@
         border-color: $primary-color-hover !important;
     }
 }
+
+.btn-secondary{
+    padding: 15px !important;
+    background-color: $secondary-color !important;
+    border-color: $secondary-color !important;
+    font-size: 20px !important;
+    line-height: 24px;
+    font-weight: 600 !important;
+    border-radius:4px !important;
+    color: $color !important;
+
+    &:hover{
+        background-color: $secondary-color-hover !important;
+        border-color: $secondary-color-hover !important;
+    }
+}

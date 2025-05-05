@@ -3,6 +3,7 @@ $color: #192434;
 $bg-color: #fff; 
 $max-width: 1290px;
 $background: #fff !default;
+$white: #fff !default;
 
 
 //Desktop
@@ -12,13 +13,6 @@ $h3_font_size: 24px !default;
 $h4_font_size: 20px!default;
 $h5_font_size: 18px !default;
 $h6_font_size: 16px !default;
-
-$h1_margin: 0.67em 0 !default;
-$h2_margin: 0.83em 0 !default;
-$h3_margin: 1em 0 !default;
-$h4_margin: 1.33em 0 !default;
-$h5_margin: 1.67em 0 !default;
-$h6_margin: 2.33em 0 !default;
 
 $h1_line_height: 44px !default;
 $h2_line_height: 32px !default;
@@ -47,13 +41,6 @@ $h4_line_height_m: 24px !default;
 $h5_line_height_m: 22px !default;
 $h6_line_height_m: 20px !default;
 
-$h1_margin_m: 0.67em 0 !default;
-$h2_margin_m: 0.83em 0 !default;
-$h3_margin_m: 1em 0 !default;
-$h4_margin_m: 1.33em 0 !default;
-$h5_margin_m: 1.67em 0 !default;
-$h6_margin_m: 2.33em 0 !default;
-
 $font-size_m: 18px;
 $font-weight_m: normal;
 $line-height_m: 1.5;
@@ -73,13 +60,6 @@ $h4_line_height_t: 24px !default;
 $h5_line_height_t: 22px !default;
 $h6_line_height_t: 20px !default;
 
-$h1_margin_t: 0.67em 0 !default;
-$h2_margin_t: 0.83em 0 !default;
-$h3_margin_t: 1em 0 !default;
-$h4_margin_t: 1.33em 0 !default;
-$h5_margin_t: 1.67em 0 !default;
-$h6_margin_t: 2.33em 0 !default;
-
 $font-size_t: 20px;
 $font-weight_t: normal;
 $line-height_t: 1.5;
@@ -92,11 +72,11 @@ $primary-color-hover: #003979;
 $primary-color-selected: #003979;
 $secondary-color: #EB8500;
 $secondary-color-disabled: #FFD587;
-$secondary-color-hover: #B95600;
+$secondary-color-hover: #FAA838;
 $secondary-color-selected: #B95600;
 $dark-light: #FFFFFF;
 $light-gray: #333333;
-
+$grey: #E4E4E4;
 /** Background Colours */
 $bg-base-color: $bg-color;
 $bg-base-dark-color: $color;

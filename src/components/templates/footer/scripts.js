@@ -2,6 +2,5 @@
 (($) => {
 
      "use strict";
-     console.log("hep/site_footer scripts loaded...");
 
 })(jQuery);

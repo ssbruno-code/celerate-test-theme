@@ -145,7 +145,6 @@ a {
 @if $normalize_headings == true {
     h1 {
         font-size: $h1_font_size !important;
-        margin: $h1_margin;
         line-height: $h1_line_height;
         color:$color;
 
@@ -162,7 +161,6 @@ a {
 
     h2 {
         font-size: $h2_font_size;
-        margin: $h2_margin;
         line-height: $h2_line_height;
         color:$color;
 
@@ -179,7 +177,6 @@ a {
 
     h3 {
         font-size: $h3_font_size;
-        margin: $h3_margin;
         line-height: $h3_line_height;
         color:$color;
 
@@ -196,7 +193,6 @@ a {
 
     h4 {
         font-size: $h4_font_size;
-        margin: $h4_margin;
         line-height: $h4_line_height;
         color:$color;
 
@@ -213,7 +209,6 @@ a {
 
     h5 {
         font-size: $h5_font_size;
-        margin: $h5_margin;
         line-height: $h5_line_height;
         color:$color;
 
@@ -230,7 +225,6 @@ a {
 
     h6 {
         font-size: $h6_font_size;
-        margin: $h6_margin;
         line-height: $h6_line_height;
         color:$color;
 
