@@ -1,0 +1,38 @@
+// SCSS code for acf_blocks/check-list component
+@import "../../assets/scss/variables";
+
+.acf-blocks-check-list {
+    padding-block: 30px;
+    h2{
+        font-size:48px;
+        line-height:56px;
+        font-weight:900;
+        color:$primary-color-hover;
+    }
+    
+    /* ===== Capability pill ===== */
+    .cap-item {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    
+      padding: 15px;
+      border: 1px solid $orange-l;
+      border-radius: 10px;
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 500;
+      background: #fff;            /* keeps it white on coloured pages */
+    }
+    
+    .cap-icon {
+    
+      border-radius: 50%;
+      background: $orange;
+
+      &.fa-check{
+        color: $white;
+        padding: 5px;
+      }
+    }
+}
