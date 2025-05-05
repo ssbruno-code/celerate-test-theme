@@ -39,7 +39,9 @@ final class PublicEnqueue {
 	 * @return void 
 	 */
 	public function register_scripts_and_styles() {
-		wp_register_style( 'bootstrap', get_template_directory_uri() . '/src/assets/library/bootstrap/css/bootstrap.css' );
+		wp_enqueue_style( 'bootstrapcss', get_template_directory_uri() . '/src/assets/library/bootstrap/css/bootstrap.css' );
+		wp_enqueue_script( 'bootstrapjs', get_template_directory_uri() . '/src/assets/library/bootstrap/js/bootstrap.js' );
+
 		
 	}
 
