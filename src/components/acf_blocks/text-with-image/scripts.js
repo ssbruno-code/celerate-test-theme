@@ -2,6 +2,5 @@
 (($) => {
 
      "use strict";
-     console.log("acf_blocks/text-with-image scripts loaded...");
 
 })(jQuery);

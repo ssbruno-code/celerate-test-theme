@@ -5,7 +5,7 @@
 */
 wp_enqueue_style('font-awesome');
 ?>
-<div class="acf-blocks-text-with-image">
+<section class="acf-blocks-text-with-image">
     <div class="container text-image-block">
         <div class="row py-5">
             <div class="content col-12 col-md-6 d-flex flex-column order-2 order-md-1">
@@ -26,4 +26,4 @@ wp_enqueue_style('font-awesome');
             </div>
         </div>
     </div>
-</div>
+</section>

@@ -72,6 +72,20 @@ final class RegisterACFBlocks {
 					wp_enqueue_script( 'text-with-image-block-js', get_stylesheet_directory_uri() . '/build/js/acf_blocks/text-with-image/scripts.js', array( 'jquery' ), null, true );
 				}
 			) );
+
+			acf_register_block( array(
+				'name' => 'testimonial-quotes',
+				'title' => __( 'Testimonial Quotes', 'celeratewp-textdomain' ),
+				'description' => __( 'Testimonial grid from, the testimonials posts', 'celeratewp-textdomain' ),
+				'render_callback' => [ $this, 'my_acf_block_render_callback' ],
+				'category' => 'celeratewp-custom-blocks',
+				'icon' => 'format-image',
+				'keywords' => array( 'blog', 'home', 'posts' ),
+				'enqueue_assets' => function () {
+					wp_enqueue_style( 'testimonial-quotes-block-css', get_template_directory_uri() . '/build/css/acf_blocks/testimonial-quotes/styles.css' );
+					wp_enqueue_script( 'testimonial-quotes-block-js', get_stylesheet_directory_uri() . '/build/js/acf_blocks/testimonial-quotes/scripts.js', array( 'jquery' ), null, true );
+				}
+			) );
 		}
 	}
 	

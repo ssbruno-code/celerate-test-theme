@@ -1,0 +1,28 @@
+// SCSS code for acf_blocks/testimonial-quotes component
+@import "../../assets/scss/variables";
+
+.acf-blocks-testimonial-quotes {
+    padding: 80px 0;
+    
+    .testimonial-card {
+        border-radius: 10px !important;
+        padding: 20px;
+
+        .text-primary{
+            color:$primary-color !important;
+        }
+
+        .text-muted{
+            color:$color !important;
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+    
+    .testimonial-avatar {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+    }
+  
+}
