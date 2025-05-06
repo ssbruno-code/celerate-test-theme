@@ -20,7 +20,7 @@ $video_iframe_lv = get_field('video_iframe_lv') ? get_field('video_iframe_lv') :
 ?>
 
 <section class="acf-blocks-logos-with-video">
-    <div class="container content py-5">
+    <div class="container content ">
         <div class="d-flex flex-column justify-content-center align-items-center py-3">
             <h2 class="title-1 text-center"><?php echo esc_html( $title_lv ); ?></h2>
             <div class="row py-5 logos border-bottom">
@@ -31,7 +31,7 @@ $video_iframe_lv = get_field('video_iframe_lv') ? get_field('video_iframe_lv') :
             </div>
 
             <div class="row cta-video mt-5">
-                <div class="col-12 col-md-5 desc pr-0">
+                <div class="col-12 col-md-5 desc pr-0 order-last order-md-first">
                     <div class="d-flex flex-column">
                         <h2 class="title-2 "><?php echo esc_html( $second_title_lv ); ?></h2>
                         <p class="description py-3"><?php echo esc_html( $description_lv ); ?></p>
@@ -42,7 +42,7 @@ $video_iframe_lv = get_field('video_iframe_lv') ? get_field('video_iframe_lv') :
                         </div>
                     </div>                
                 </div>
-                <div class="col-12 col-md-7 video ">
+                <div class="col-12 col-md-7 video  order-first order-md-last">
                     <!-- Video box -->
                     <div class="video-wrapper position-relative js-video">
                         <img src="<?php echo esc_url($video_thumbnail_lv); ?>"class="img-fluid w-100 video-thumb" alt="Workflow demo video">

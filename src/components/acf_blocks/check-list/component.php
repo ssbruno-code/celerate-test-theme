@@ -10,7 +10,7 @@ $cta_link_ck = isset(get_field('cta_button_ck')['url']) ? get_field('cta_button_
 $cta_tab_ck = isset(get_field('cta_button_ck')['target']) ? get_field('cta_button_ck')['target'] : '_self'; 
 ?>
 <section class="acf-blocks-check-list">
-    <div class="text-center container py-5">
+    <div class="text-center container">
 
         <h2 class="pb-2"><?php echo esc_html( $title_ck ); ?></h2>
 

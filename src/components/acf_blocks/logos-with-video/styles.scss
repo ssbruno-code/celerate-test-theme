@@ -2,11 +2,22 @@
 @import '../../assets/scss/_variables';
 
 .acf-blocks-logos-with-video  {
-
+    padding-top:50px;
+    padding-bottom:100px;
     .content{
         .title-1{
             color: $primary-color-hover !important;
             font-weight: 900 !important;
+            font-size:40px;
+            line-height: 44px;
+            @media (max-width: 1200px) {
+                font-size: 36px !important;
+                line-height: 40px !important;
+            }
+            @media (max-width: 768px) {
+                font-size: 32px !important;
+                line-height: 36px !important;
+            }
         }
 
         .title-2{
@@ -14,6 +25,14 @@
             font-weight: 900 !important;
             font-size: 62px;
             line-height: 72px;
+            @media (max-width: 1200px) {
+                font-size: 44px !important;
+                line-height: 48px !important;
+            }
+            @media (max-width: 768px) {
+                font-size: 36px !important;
+                line-height: 40px !important;
+            }
         }
 
         .desc{
@@ -23,6 +42,9 @@
 
     
     .video {
+        @media (max-width: 768px) {
+            padding-bottom:40px;
+        }
         .video-wrapper {
             cursor: pointer;               // whole box acts like a button
             aspect-ratio: 16 / 9;          // keeps responsive 16:9 area

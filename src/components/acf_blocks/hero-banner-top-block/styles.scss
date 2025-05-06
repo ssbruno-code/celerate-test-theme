@@ -6,7 +6,7 @@
 .acf-blocks-hero-banner-top {
     .hero-container {
         .row{
-            min-height: 600px;
+            padding-block:70px;
         }
 
         .content{
@@ -15,6 +15,14 @@
                 font-size: 65px !important;
                 line-height: 72px !important;
                 font-weight: 900;
+                @media (max-width: 1200px) {
+                    font-size: 44px !important;
+                    line-height: 48px !important;
+                }
+                @media (max-width: 768px) {
+                    font-size: 36px !important;
+                    line-height: 40px !important;
+                }
             }
 
             p{

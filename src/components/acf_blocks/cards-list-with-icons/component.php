@@ -18,7 +18,7 @@ $text_icon_3_cl = get_field('text_icon_3_cl') ? get_field('text_icon_3_cl') : 'D
 $text_icon_4_cl = get_field('text_icon_4_cl') ? get_field('text_icon_4_cl') : 'Organizational Friction';
 
 ?>
-<section class="pain-points-section acf-blocks-cards-list-with-icons py-5" style="background-image: url('<?php echo get_template_directory_uri(); ?>/src/assets/images/bg-4.png'); background-size: cover; background-repeat: no-repeat; background-position: center center;">
+<section class="pain-points-section acf-blocks-cards-list-with-icons" style="background-image: url('<?php echo get_template_directory_uri(); ?>/src/assets/images/bg-4.png'); background-size: cover; background-repeat: no-repeat; background-position: center center;">
   <div class="container">
 
     <!-- Top headline -->

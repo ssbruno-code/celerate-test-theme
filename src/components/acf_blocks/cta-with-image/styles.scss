@@ -3,7 +3,7 @@
 
 .acf-blocks-cta-with-image {
     background-color: $yellow-l;
-    padding-block: 20px;
+    padding-block: 50px;
 
     .cta-container {
         .row{
@@ -16,6 +16,14 @@
                 font-size: 65px !important;
                 line-height: 72px !important;
                 font-weight: 900;
+                @media (max-width: 1200px) {
+                    font-size: 44px !important;
+                    line-height: 48px !important;
+                }
+                @media (max-width: 768px) {
+                    font-size: 36px !important;
+                    line-height: 40px !important;
+                }
             }
 
             h3{

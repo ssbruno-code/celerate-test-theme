@@ -14,7 +14,7 @@ $image_ct = get_field('image_ct') ? get_field('image_ct') : get_template_directo
 ?>
 <section class="acf-blocks-cta-with-image">
     <div class="container cta-container">
-        <div class="row py-5">
+        <div class="row">
             <div class="col-12 col-md-6 d-flex flex-column justify-content-center content order-2 order-md-1">
                 <h3><?php echo esc_html( $subtitle_ct ); ?></h3>
                 <h2><?php echo esc_html( $title_ct ); ?></h2>

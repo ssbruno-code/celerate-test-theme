@@ -12,6 +12,7 @@ final class Theme {
 		add_filter( "wp_title", [ $this, "theme_page_title" ], 10, 2 );
 		add_filter( "upload_mimes", [ $this, "allow_svg_upload" ], 10, 1 );
 		add_filter( "single_template", [ $this, "single_template_loader" ] );
+		add_action( 'after_setup_theme', [ $this, 'mytheme_register_nav_menu' ], 0 );
 	}
 
 	/**
@@ -21,7 +22,17 @@ final class Theme {
 	public function theme_initialization() {
 		/** Required Theme Supports */
 		add_theme_support( "post-thumbnails" );
+		add_theme_support( "menus" );
 		add_post_type_support( "page", "excerpt" );
+	}
+
+
+	public function mytheme_register_nav_menu(){
+		register_nav_menus( array(
+	    	'header_menu' => __( 'Header Menu', 'celeratewp-textdomain' ),
+	    	'footer_menu'  => __( 'Footer Menu', 'celeratewp-textdomain' ),
+	    	'subfooter_menu'  => __( 'Subfooter Menu', 'celeratewp-textdomain' ),
+		) );
 	}
 
 	/**

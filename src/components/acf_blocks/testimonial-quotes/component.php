@@ -8,9 +8,9 @@ $testimonials_t = get_field('testimonials_t');
 
 ?>
 <section class="acf-blocks-testimonial-quotes" style="background-image: url('<?php echo get_template_directory_uri(); ?>/src/assets/images/bg2.png'); background-size: cover; background-repeat: no-repeat; background-position: center center;">
-    <div class="testimonials-section py-5 text-white">
+    <div class="testimonials-section text-white">
         <div class="container">
-            <div class="row justify-content-center gy-5 gx-5">
+            <div class="row justify-content-center gy-5 gx-0 gx-md-5">
 
             <?php
                 foreach ( $testimonials_t as $testimonial ) {
