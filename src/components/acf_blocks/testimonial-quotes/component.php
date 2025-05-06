@@ -5,9 +5,6 @@
 */
 
 $testimonials_t = get_field('testimonials_t');
-var_dump($testimonials_t);
-
-$quote = get_field('testimonial_text', $testimonials_t[0]);
 
 ?>
 <section class="acf-blocks-testimonial-quotes" style="background-image: url('<?php echo get_template_directory_uri(); ?>/src/assets/images/bg2.png'); background-size: cover; background-repeat: no-repeat; background-position: center center;">

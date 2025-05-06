@@ -9,8 +9,9 @@ $use_alternative_style = get_field('use_alternative_style');
 $title_ti = get_field('title_ti') ? get_field('title_ti') : 'End-to-End Process Automation';
 $description_ti = get_field('subtitle_ti') ? get_field('subtitle_ti') : 'Rapidly deploy and securely manage end to end processes.';
 $image_ti = get_field('image_ti') ? get_field('image_ti') : get_template_directory_uri() . '/src/assets/images/notebook-.png';
+
 ?>
-<section class="acf-blocks-text-with-image <?php echo $use_alternative_style ? ' alternative-style' : ''; ?>">
+<section class="acf-blocks-text-with-image <?php echo $use_alternative_style ? ' alternative-style' : ''; ?> w-100">
     <div class="container text-image-block">
         <div class="row py-5 ">
             <div class="content col-12 col-md-6 d-flex flex-column <?php echo $use_alternative_style ? ' order-first order-md-last' : ' order-last order-md-first'; ?>">
@@ -29,7 +30,7 @@ $image_ti = get_field('image_ti') ? get_field('image_ti') : get_template_directo
                 </ul>
                 
             </div>
-            <div class="image col-12 col-md-6 d-flex flex-column justify-content-center align-items-center img  <?php echo $use_alternative_style ? ' order-last order-md-first' : ' order-first order-md-last'; ?>">
+            <div class="image col-12 col-md-6 d-flex flex-column justify-content-center align-items-center img  <?php echo $use_alternative_style ? ' order-last order-md-first' : ' order-first order-md-last'; ?> ">
                 <img src="<?php echo esc_url($image_ti); ?>" alt=" banner" class="hero-img img-fluid">
             </div>
         </div>

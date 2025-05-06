@@ -6,9 +6,9 @@
 
 $title = get_field('title') ? get_field('title') : 'Quote Management';
 $description = get_field('description') ? get_field('description') : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet aliquam lectus, in scelerisque eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc iaculis at felis sed pretium.';
-$cta_text = get_field('cta_button')['title'] ? get_field('cta_button')['title'] : 'See a Demo';
-$cta_link = get_field('cta_button')['url'] ? get_field('cta_button')['url'] : '#';
-$cta_tab = get_field('cta_button')['target'] ? get_field('cta_button')['target'] : '_self'; 
+$cta_text = isset(get_field('cta_button')['title']) ? get_field('cta_button')['title'] : 'See a Demo';
+$cta_link = isset(get_field('cta_button')['url']) ? get_field('cta_button')['url'] : '#';
+$cta_tab = isset(get_field('cta_button')['target']) ? get_field('cta_button')['target'] : '_self'; 
 $img_url = get_field('image') ? get_field('image') : get_template_directory_uri() . '/src/assets/images/her-img.png';
 ?>
 <section class="acf-blocks-hero-banner-top" style="background-image: url('<?php echo get_template_directory_uri(); ?>/src/assets/images/bg-hero.png'); background-size: cover; background-repeat: no-repeat; background-position: center right;">

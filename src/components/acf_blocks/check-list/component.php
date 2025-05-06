@@ -4,70 +4,33 @@
  * @description     Add a description for the component
 */
 
-$default_args = array("class" => "");
-$args = array_merge($default_args, $args ?? []);
+$title_ck = get_field('title_ck') ? get_field('title_ck') : 'JobTraQ\'s no-node workflow platform enables management of any process';
+$cta_text_ck = isset(get_field('cta_button_ck')['title']) ? get_field('cta_button_ck')['title'] : 'See a Demo';
+$cta_link_ck = isset(get_field('cta_button_ck')['url']) ? get_field('cta_button_ck')['url'] : '#';
+$cta_tab_ck = isset(get_field('cta_button_ck')['target']) ? get_field('cta_button_ck')['target'] : '_self'; 
 ?>
-<section class="acf-blocks-check-list <?php echo $args['class']; ?>">
+<section class="acf-blocks-check-list">
     <div class="text-center container py-5">
 
-        <h2 class="pb-2">JobTraQ’s no-node workflow platform enables <br class="d-none d-md-inline">management of any process</h2>
+        <h2 class="pb-2"><?php echo esc_html( $title_ck ); ?></h2>
 
         <div class="row g-2 my-4">
 
-            <!-- ───── Column 1 ───── -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="cap-item"><i class="cap-icon fa fa-check"></i>Real-time project and task visibility</div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="cap-item"><i class="cap-icon fa fa-check"></i>Supply Chain</div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="cap-item"><i class="cap-icon fa fa-check"></i>Lead Time Management</div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="cap-item"><i class="cap-icon fa fa-check"></i>Logistics</div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="cap-item"><i class="cap-icon fa fa-check"></i>Quote Requests</div>
-            </div>
-
-            <!-- ───── Column 2 ───── -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="cap-item"><i class="cap-icon fa fa-check"></i>Work Orders</div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="cap-item"><i class="cap-icon fa fa-check"></i>Maintenance</div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="cap-item"><i class="cap-icon fa fa-check"></i>Warranties & Claims</div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="cap-item"><i class="cap-icon fa fa-check"></i>Continuous Process Movement</div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="cap-item"><i class="cap-icon fa fa-check"></i>Back Office Tasks</div>
-            </div>
-
-            <!-- ───── Column 3 ───── -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="cap-item"><i class="cap-icon fa fa-check"></i>Capex</div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="cap-item"><i class="cap-icon fa fa-check"></i>Quality Management</div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="cap-item"><i class="cap-icon fa fa-check"></i>Job Setup & Fulfillment</div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="cap-item"><i class="cap-icon fa fa-check"></i>GMP</div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="cap-item"><i class="cap-icon fa fa-check"></i>ERP Integrations</div>
-            </div>
+            <?php 
+                if(have_rows('checklist_ck')): 
+                    while(have_rows('checklist_ck')): the_row();
+                        ?>
+                        <div class="col-12 col-md-4 ">
+                            <div class="cap-item"><i class="cap-icon fa fa-check"></i><?php echo esc_html( get_sub_field('list_item_text') ); ?></div>
+                        </div>
+                        <?php 
+                    endwhile; 
+                endif;
+            ?>  
 
         </div><!-- /.row -->
         <div class="cta-btn pt-4">
-            <a href="#" target="_blank" class="btn btn-primary">See a Demo</a>
+            <a href="<?php echo esc_url($cta_link_ck); ?>" target="<?php echo esc_attr($cta_tab_ck); ?>" class="btn btn-primary"><?php echo esc_html($cta_text_ck); ?></a>
         </div>
     </div>
 </section>

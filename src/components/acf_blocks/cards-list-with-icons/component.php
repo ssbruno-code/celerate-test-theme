@@ -7,7 +7,7 @@
 $title_cl = get_field('title_cl') ? get_field('title_cl') : 'What is the cost of managing through spreadsheets, email, and subpar legacy applications?';
 $title_2_cl = get_field('title_2_cl') ? get_field('title_2_cl') : 'Broken processes cost more than you think.';
 $card_1_title_cl = get_field('card_1_title_cl') ? get_field('card_1_title_cl') : 'Does your company encounter these challenges?';
-$card_2_title_cl = get_field('card_2_title_cl') ? get_field('card_2_title_cl') : 'Business costs of these pain points include:';
+$card_2_title_cl = get_field('card2_title_cl') ? get_field('card2_title_cl') : 'Business costs of these pain points include:';
 $image_icon_1_cl = get_field('image_icon_1_cl') ? get_field('image_icon_1_cl') : get_template_directory_uri() . '/src/assets/images/icon1.png';
 $image_icon_2_cl = get_field('image_icon_2_cl') ? get_field('image_icon_2_cl') : get_template_directory_uri() . '/src/assets/images/icon2.png';
 $image_icon_3_cl = get_field('image_icon_3_cl') ? get_field('image_icon_3_cl') : get_template_directory_uri() . '/src/assets/images/icon3.png';
@@ -65,8 +65,8 @@ $text_icon_4_cl = get_field('text_icon_4_cl') ? get_field('text_icon_4_cl') : 'O
             </h5>
             <ul class="list-unstyled arrow-list mb-0">
             <?php 
-                if(have_rows('card_2_list_cl')): 
-                    while(have_rows('card_2_list_cl')): the_row();
+                if(have_rows('card_2_title_cl')): 
+                    while(have_rows('card_2_title_cl')): the_row();
                         ?>
                         <li><?php echo esc_html( get_sub_field('item_text') ); ?></li>
                         <?php 
