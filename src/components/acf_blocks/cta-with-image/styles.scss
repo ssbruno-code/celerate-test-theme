@@ -1,5 +1,5 @@
 // SCSS code for acf_blocks/cta-with-image component
-@import "../../assets/scss/variables";
+@use "../../../assets/scss/variables" as *;
 
 .acf-blocks-cta-with-image {
     background-color: $yellow-l;

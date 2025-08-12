@@ -1,4 +1,4 @@
-@import "../../assets/scss/variables";
+@use "../../../assets/scss/variables" as *;
 
 .acf-blocks-cards-list-with-icons {
     padding-block:100px;

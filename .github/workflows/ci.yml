@@ -1,0 +1,52 @@
+name: CI (Lint & Build)
+
+on:
+  pull_request:
+    branches: [main, staging]
+  push:
+    branches: [main, staging]
+
+jobs:
+  lint-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install NPM deps
+        run: npm ci
+
+      - name: SCSS Lint
+        run: npm run lint:scss
+
+      - name: Use PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: composer:v2
+
+      - name: Install Composer deps (dev on PRs)
+        run: composer install --prefer-dist --no-interaction --no-progress
+
+      - name: Build theme assets
+        run: npx gulp build
+
+      - name: Upload build artifact (debug/inspection)
+        uses: actions/upload-artifact@v4
+        with:
+          name: theme-build
+          path: |
+            build/**
+            vendor/**
+            classes/**
+            src/**
+            *.php
+            style.css
+          if-no-files-found: warn

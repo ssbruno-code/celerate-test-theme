@@ -1,5 +1,5 @@
 // SCSS code for hep/404-page component
-@import '../../assets/scss/_variables';
+@use "../../assets/scss/variables" as *;
 
 .error404 {
 	background-color: $bg-secondary-color;

@@ -1,17 +1,31 @@
 import gulp from 'gulp';
 const { task, src, dest, watch, series } = gulp;
-import sass from 'gulp-sass';
-import * as dartSass from 'sass';
+
+const _stderrWrite = process.stderr.write.bind(process.stderr);
+process.stderr.write = (chunk, enc, cb) => {
+  const msg = Buffer.isBuffer(chunk) ? chunk.toString('utf8') : String(chunk);
+  if (
+    msg.includes('Deprecation [legacy-js-api]') ||
+    msg.includes('https://sass-lang.com/d/legacy-js-api')
+  ) {
+    return true; // swallow it
+  }
+  return _stderrWrite(chunk, enc, cb);
+};
+// -
+
+import gulpSass from 'gulp-sass';
+import * as dartSass from 'sass-embedded';
 import sourcemaps from 'gulp-sourcemaps';
 import { deleteAsync } from 'del';
 const { init, write } = sourcemaps;
 import gulpUglify from 'gulp-uglify-es';
 const uglify = gulpUglify.default;
-const sassProcessor = sass(dartSass);
 import fs from 'fs';
 import path from 'path';
 import cssnano from 'gulp-cssnano';
-
+const sassProcessor = gulpSass(dartSass);
+process.env.SASS_SILENCE_DEPRECATIONS ??= 'legacy-js-api';
 /**
  * Task to compile all SCSS files
  */
@@ -21,11 +35,12 @@ task('sass', async () => {
         'src/components/**/*.scss',
     ])
         .pipe(init())
-        .pipe(sassProcessor({
-            includePaths: [
-                "src/assets/scss",
-            ]
-        }).on('error', (e) => console.error(e)))
+        .pipe(
+          sassProcessor({
+            includePaths: ["src/assets/scss"],
+            quietDeps: true
+          })
+        )
         .pipe(cssnano().on('error', (e) => console.error(e)))
         .pipe(write('.'))
         .pipe(dest('build/css'));
@@ -86,7 +101,7 @@ task('new-component', async () => {
 
     // File contents for the .php, .scss, and .js files
     const phpContent = `<?php\n/**\n * @component       ${componentName}\n * @description     Add a description for the component\n*/\n\n$default_args = array("class" => "");\n$args = array_merge($default_args, $args ?? []);\n?>\n<div class="${componentName.replace(/(\/|_)/g, "-")} <?php echo $args['class']; ?>">\n\n</div>`;
-    const scssContent = `// SCSS code for ${componentName} component\n@import "./shared";\n\n.${componentName.replace(/(\/|_)/g, "-")} {\n\n}`;
+    const scssContent = `// SCSS code for ${componentName} component\n@use "../../../assets/scss/variables" as *;\n\n.${componentName.replace(/(\/|_)/g, "-")} {\n\n}`;
     const jsContent = `// JavaScript code for ${componentName} component\n(($) => {\n\n     "use strict";\n     console.log("${componentName} scripts loaded...");\n\n})(jQuery);`;
 
     // Write the contents to the respective files

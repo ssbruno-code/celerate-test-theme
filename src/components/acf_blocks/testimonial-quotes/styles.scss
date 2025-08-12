@@ -1,5 +1,5 @@
 // SCSS code for acf_blocks/testimonial-quotes component
-@import "../../assets/scss/variables";
+@use "../../../assets/scss/variables" as *;
 
 .acf-blocks-testimonial-quotes {
     padding: 100px 0;

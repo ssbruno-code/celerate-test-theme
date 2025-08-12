@@ -1,5 +1,4 @@
-// SCSS code for acf_blocks/text-with-image component
-@import "../../assets/scss/variables";
+@use "../../../assets/scss/variables" as *;
 
 .acf-blocks-text-with-image {
     padding-block: 100px;

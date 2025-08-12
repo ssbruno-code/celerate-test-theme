@@ -1,5 +1,5 @@
 // SCSS code for hep/breadcrumbs component
-@import '../../assets/scss/_variables';
+@use "../../assets/scss/variables" as *;
 
 .celeratewpcssbreadcrumbs {
     font-size: 14px;

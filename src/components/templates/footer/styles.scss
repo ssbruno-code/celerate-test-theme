@@ -1,5 +1,5 @@
 // SCSS code for hep/site_footer component
-@import '../../assets/scss/_variables';
+@use "../../assets/scss/variables" as *;
 
 .celeratewpcss-site-footer {
     background-color: $bg-base-dark-color;

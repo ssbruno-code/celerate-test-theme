@@ -1,6 +1,6 @@
 // SCSS code for acf_blocks/hero-banner-top component
 
-@import '../../assets/scss/_variables';
+@use "../../../assets/scss/variables" as *;
 
 
 .acf-blocks-hero-banner-top {

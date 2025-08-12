@@ -1,0 +1,73 @@
+name: Deploy Theme (EasyEngine)
+
+on:
+  push:
+    branches: [staging, main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      IS_PROD: ${{ github.ref == 'refs/heads/main' }}
+      SSH_HOST:         ${{ github.ref == 'refs/heads/main' && secrets.PRODUCTION_SSH_HOST || secrets.STAGING_SSH_HOST }}
+      SSH_USER:         ${{ github.ref == 'refs/heads/main' && secrets.PRODUCTION_SSH_USER || secrets.STAGING_SSH_USER }}
+      SSH_PORT:         ${{ github.ref == 'refs/heads/main' && secrets.PRODUCTION_SSH_PORT || secrets.STAGING_SSH_PORT }}
+      SSH_KEY:          ${{ github.ref == 'refs/heads/main' && secrets.PRODUCTION_SSH_KEY  || secrets.STAGING_SSH_KEY  }}
+      REMOTE_PATH:      ${{ github.ref == 'refs/heads/main' && '/opt/easyengine/sites/xprocode.com/app/htdocs/wp-content/themes/celerate' || '/opt/easyengine/sites/xprocode-staging.com/app/htdocs/wp-content/themes/celerate' }}
+      EE_SITE:          ${{ github.ref == 'refs/heads/main' && secrets.PRODUCTION_EE_SITE || secrets.STAGING_EE_SITE }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install NPM deps
+        run: npm ci
+
+      - name: SCSS Lint
+        run: npm run lint:scss
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: composer:v2
+
+      - name: Composer install (prod = no-dev)
+        run: |
+          if [ "${IS_PROD}" = "true" ]; then
+            composer install --no-dev --prefer-dist --no-interaction --no-progress
+          else
+            composer install --prefer-dist --no-interaction --no-progress
+          fi
+
+      - name: Build assets
+        run: npx gulp build
+
+      - name: Prepare SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${SSH_KEY}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -p "${SSH_PORT}" "${SSH_HOST}" >> ~/.ssh/known_hosts
+
+      - name: Ensure remote theme dir exists
+        run: |
+          ssh -p "${SSH_PORT}" ${SSH_USER}@${SSH_HOST} "mkdir -p '${REMOTE_PATH}'"
+
+      - name: Rsync theme to EE site
+        run: |
+          rsync -az --delete \
+            --exclude-from=".rsyncignore" \
+            -e "ssh -p ${SSH_PORT}" \
+            ./ ${SSH_USER}@${SSH_HOST}:"${REMOTE_PATH}"
+
+      - name: Flush EE caches (page + object) and WP object cache
+        run: |
+          ssh -p "${SSH_PORT}" ${SSH_USER}@${SSH_HOST} \
+            "ee site clean ${EE_SITE} --page || true; ee site clean ${EE_SITE} --object || true"
+          ssh -p "${SSH_PORT}" ${SSHUSER:-$SSH_USER}@${SSH_HOST} \
+            "ee shell ${EE_SITE} --command='wp cache flush --quiet' || true"

@@ -1,0 +1,13 @@
+.git
+.github
+node_modules
+npm-debug.log
+package-lock.json
+package.json
+gulpfile.mjs
+*.map
+*.md
+*.MD
+composer.lock
+tests
+**/.DS_Store

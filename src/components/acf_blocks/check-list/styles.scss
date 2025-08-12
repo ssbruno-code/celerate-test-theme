@@ -1,5 +1,5 @@
 // SCSS code for acf_blocks/check-list component
-@import "../../assets/scss/variables";
+@use "../../../assets/scss/variables" as *;
 
 .acf-blocks-check-list {
     padding-block: 100px;
