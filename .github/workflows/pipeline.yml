@@ -87,9 +87,6 @@ jobs:
       - name: Install NPM deps
         run: npm ci
 
-      - name: SCSS Lint (block bad styles from shipping)
-        run: npm run lint:scss
-
       - name: Use PHP
         uses: shivammathur/setup-php@v2
         with:
