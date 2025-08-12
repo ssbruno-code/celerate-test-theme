@@ -7,7 +7,7 @@
     "lint:scss": "stylelint \"src/**/*.scss\" \"src/components/**/*.scss\"",
     "build": "cross-env SASS_SILENCE_DEPRECATIONS=legacy-js-api gulp build",
     "watch": "cross-env SASS_SILENCE_DEPRECATIONS=legacy-js-api gulp",
-    "sass":  "cross-env SASS_SILENCE_DEPRECATIONS=legacy-js-api gulp sass"
+    "sass": "cross-env SASS_SILENCE_DEPRECATIONS=legacy-js-api gulp sass"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +19,7 @@
   "devDependencies": {
     "cross-env": "^10.0.0",
     "del": "^7.1.0",
+    "gulp-if": "^3.0.0",
     "gulp-sourcemaps": "^3.0.0",
     "sass-embedded": "^1.90.0",
     "stylelint": "^16.7.0",
